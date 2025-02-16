@@ -2,6 +2,12 @@
 
 A simple Go program that prompts the user for their name and greets them.
 
+## Screenshot
+
+Here is a screenshot of the program in action:
+
+![Program Screenshot](img/screenshot.png)
+
 ## Features
 - Reads user input from the console.
 - Ensures the name is not empty.
