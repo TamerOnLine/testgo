@@ -9,19 +9,22 @@ import (
 
 func main() {
     reader := bufio.NewReader(os.Stdin)
-    
+
     for {
         fmt.Print("Enter your name: ")
-        name, err := reader.ReadString('\n')
+
+        // قراءة المدخلات مع التعامل مع الأخطاء
+        input, err := reader.ReadString('\n')
         if err != nil {
-            fmt.Fprintf(os.Stderr, "Error reading input: %v\n", err)
-            os.Exit(1)
+            fmt.Println("Error reading input. Please try again.")
+            continue
         }
 
-        name = strings.TrimSpace(name) 
+        name := strings.TrimSpace(input) // إزالة الفراغات والمسافات غير الضرورية
+
         if name == "" {
             fmt.Println("Name cannot be empty. Please try again.")
-            continue 
+            continue
         }
 
         fmt.Printf("Hello, %s 👋!\n", name)
